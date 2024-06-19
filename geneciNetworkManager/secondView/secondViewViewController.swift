@@ -8,13 +8,11 @@
 import UIKit
 
 protocol secondViewViewControllerProtocol: seUpViewProtocol {
-    var interactor: secondViewInteractorProtocol? { get set }
     var router: secondViewRputerProtocol? { get set }
 }
 
 class secondViewViewController: UIViewController, secondViewViewControllerProtocol {
     
-    var interactor: secondViewInteractorProtocol?
     var router: secondViewRputerProtocol?
     var endPoint = "https://picsum.photos/200"
     

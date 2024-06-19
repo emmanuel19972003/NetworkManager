@@ -113,7 +113,7 @@ class taskViewController: UIViewController, seUpViewProtocol {
             let image1: UIImage = try await NetworkManagerAsyncThrows.share.request(endPoint: endPoint)
             imageOneView.image = image1
             print("a mimir")
-            //            try await Task.sleep(for: .seconds(3))
+//            try await Task.sleep(nanoseconds: 3_000_000_000)
             print("termino 1")
         }
         
