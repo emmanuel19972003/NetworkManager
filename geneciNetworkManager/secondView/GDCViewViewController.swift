@@ -1,5 +1,5 @@
 //
-//  secondViewViewController.swift
+//  GDCViewViewController.swift
 //  geneciNetworkManager
 //
 //  Created by Emmanuel Zambrano Quitian on 9/19/23.
@@ -7,13 +7,13 @@
 
 import UIKit
 
-protocol secondViewViewControllerProtocol: seUpViewProtocol {
-    var router: secondViewRputerProtocol? { get set }
+protocol GDCViewViewControllerProtocol: seUpViewProtocol {
+    var router: GDCViewRouterProtocol? { get set }
 }
 
-class secondViewViewController: UIViewController, secondViewViewControllerProtocol {
+class GDCViewViewController: UIViewController, GDCViewViewControllerProtocol {
     
-    var router: secondViewRputerProtocol?
+    var router: GDCViewRouterProtocol?
     var endPoint = "https://picsum.photos/200"
     
     override func viewDidLoad() {
@@ -271,5 +271,5 @@ class secondViewViewController: UIViewController, secondViewViewControllerProtoc
 }
 
 #Preview {
-    secondViewViewController()
+    GDCViewViewController()
 }

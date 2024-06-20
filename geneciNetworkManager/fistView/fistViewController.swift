@@ -94,8 +94,8 @@ class fistViewController: UIViewController, seUpViewProtocol {
     
     lazy var gotToView2: UIButton = {
         let button = UIButton()
-        button.setTitle("go to View", for: .normal)
-        button.addTarget(self, action: #selector(goToView2), for: .touchUpInside)
+        button.setTitle("go to GDC", for: .normal)
+        button.addTarget(self, action: #selector(goToGDCView), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .systemGreen
         button.layer.cornerRadius = 25
@@ -225,9 +225,9 @@ class fistViewController: UIViewController, seUpViewProtocol {
         textLable.text = String()
     }
     
-    @objc func goToView2() {
-        let secondView = secondViewRputer.getsecondView()
-        self.navigationController?.pushViewController(secondView, animated: true)
+    @objc func goToGDCView() {
+        let GDCView = GDCViewRouter.getGDCView()
+        self.navigationController?.pushViewController(GDCView, animated: true)
     }
     
     @objc func gotoViewTaskcation() {

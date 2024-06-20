@@ -16,8 +16,8 @@
 		67522D2E2AB370B90080BDD9 /* NetworManagerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67522D2D2AB370B90080BDD9 /* NetworManagerModels.swift */; };
 		678BF2472AC63DE9000629D7 /* taskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678BF2462AC63DE9000629D7 /* taskViewController.swift */; };
 		678BF2492AC63E3F000629D7 /* taskRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678BF2482AC63E3F000629D7 /* taskRouter.swift */; };
-		67CA20232AB9FFBD00D8ED43 /* secondViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CA20222AB9FFBD00D8ED43 /* secondViewViewController.swift */; };
-		67CA20292AB9FFE200D8ED43 /* secondViewRputer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CA20282AB9FFE200D8ED43 /* secondViewRputer.swift */; };
+		67CA20232AB9FFBD00D8ED43 /* GDCViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CA20222AB9FFBD00D8ED43 /* GDCViewViewController.swift */; };
+		67CA20292AB9FFE200D8ED43 /* GDCViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CA20282AB9FFE200D8ED43 /* GDCViewRouter.swift */; };
 		67EA30D52B74751A00A887D0 /* NetworManagerCompletionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EA30D42B74751A00A887D0 /* NetworManagerCompletionHandler.swift */; };
 		67EA30D72B74758D00A887D0 /* NetworkManagerCompletionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EA30D62B74758D00A887D0 /* NetworkManagerCompletionResult.swift */; };
 		67EA30D92B74765500A887D0 /* NetworkManagerAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EA30D82B74765500A887D0 /* NetworkManagerAsync.swift */; };
@@ -63,8 +63,8 @@
 		67CA1FF62AB8EE3300D8ED43 /* fistViewControllerTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fistViewControllerTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		67CA200A2AB91A6D00D8ED43 /* class1Test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = class1Test.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		67CA20172AB91A8F00D8ED43 /* clasOnesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = clasOnesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		67CA20222AB9FFBD00D8ED43 /* secondViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondViewViewController.swift; sourceTree = "<group>"; };
-		67CA20282AB9FFE200D8ED43 /* secondViewRputer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secondViewRputer.swift; sourceTree = "<group>"; };
+		67CA20222AB9FFBD00D8ED43 /* GDCViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDCViewViewController.swift; sourceTree = "<group>"; };
+		67CA20282AB9FFE200D8ED43 /* GDCViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDCViewRouter.swift; sourceTree = "<group>"; };
 		67EA30D42B74751A00A887D0 /* NetworManagerCompletionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworManagerCompletionHandler.swift; sourceTree = "<group>"; };
 		67EA30D62B74758D00A887D0 /* NetworkManagerCompletionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerCompletionResult.swift; sourceTree = "<group>"; };
 		67EA30D82B74765500A887D0 /* NetworkManagerAsync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerAsync.swift; sourceTree = "<group>"; };
@@ -171,8 +171,8 @@
 		67CA20212AB9FFA300D8ED43 /* secondView */ = {
 			isa = PBXGroup;
 			children = (
-				67CA20222AB9FFBD00D8ED43 /* secondViewViewController.swift */,
-				67CA20282AB9FFE200D8ED43 /* secondViewRputer.swift */,
+				67CA20222AB9FFBD00D8ED43 /* GDCViewViewController.swift */,
+				67CA20282AB9FFE200D8ED43 /* GDCViewRouter.swift */,
 			);
 			path = secondView;
 			sourceTree = "<group>";
@@ -340,7 +340,7 @@
 				67522D2E2AB370B90080BDD9 /* NetworManagerModels.swift in Sources */,
 				67EA30D52B74751A00A887D0 /* NetworManagerCompletionHandler.swift in Sources */,
 				67EA30DB2B7476BC00A887D0 /* NetworkManagerAsyncThrows.swift in Sources */,
-				67CA20292AB9FFE200D8ED43 /* secondViewRputer.swift in Sources */,
+				67CA20292AB9FFE200D8ED43 /* GDCViewRouter.swift in Sources */,
 				67EA30D72B74758D00A887D0 /* NetworkManagerCompletionResult.swift in Sources */,
 				673289252AB3520800B61CE6 /* fistViewController.swift in Sources */,
 				67522D2C2AB36F490080BDD9 /* seUpViewProtocol.swift in Sources */,
@@ -348,7 +348,7 @@
 				67EA30D92B74765500A887D0 /* NetworkManagerAsync.swift in Sources */,
 				678BF2472AC63DE9000629D7 /* taskViewController.swift in Sources */,
 				673289112AB3514500B61CE6 /* SceneDelegate.swift in Sources */,
-				67CA20232AB9FFBD00D8ED43 /* secondViewViewController.swift in Sources */,
+				67CA20232AB9FFBD00D8ED43 /* GDCViewViewController.swift in Sources */,
 				678BF2492AC63E3F000629D7 /* taskRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
