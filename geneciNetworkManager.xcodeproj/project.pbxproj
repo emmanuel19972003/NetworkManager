@@ -22,6 +22,7 @@
 		67EA30D72B74758D00A887D0 /* NetworkManagerCompletionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EA30D62B74758D00A887D0 /* NetworkManagerCompletionResult.swift */; };
 		67EA30D92B74765500A887D0 /* NetworkManagerAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EA30D82B74765500A887D0 /* NetworkManagerAsync.swift */; };
 		67EA30DB2B7476BC00A887D0 /* NetworkManagerAsyncThrows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EA30DA2B7476BC00A887D0 /* NetworkManagerAsyncThrows.swift */; };
+		9FF21D2E2C4163E600F29045 /* queues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF21D2D2C4163E600F29045 /* queues.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		67EA30D62B74758D00A887D0 /* NetworkManagerCompletionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerCompletionResult.swift; sourceTree = "<group>"; };
 		67EA30D82B74765500A887D0 /* NetworkManagerAsync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerAsync.swift; sourceTree = "<group>"; };
 		67EA30DA2B7476BC00A887D0 /* NetworkManagerAsyncThrows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerAsyncThrows.swift; sourceTree = "<group>"; };
+		9FF21D2D2C4163E600F29045 /* queues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = queues.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				67CA20222AB9FFBD00D8ED43 /* GDCViewViewController.swift */,
+				9FF21D2D2C4163E600F29045 /* queues.swift */,
 				67CA20282AB9FFE200D8ED43 /* GDCViewRouter.swift */,
 			);
 			path = secondView;
@@ -344,6 +347,7 @@
 				67EA30D72B74758D00A887D0 /* NetworkManagerCompletionResult.swift in Sources */,
 				673289252AB3520800B61CE6 /* fistViewController.swift in Sources */,
 				67522D2C2AB36F490080BDD9 /* seUpViewProtocol.swift in Sources */,
+				9FF21D2E2C4163E600F29045 /* queues.swift in Sources */,
 				6732890F2AB3514500B61CE6 /* AppDelegate.swift in Sources */,
 				67EA30D92B74765500A887D0 /* NetworkManagerAsync.swift in Sources */,
 				678BF2472AC63DE9000629D7 /* taskViewController.swift in Sources */,
