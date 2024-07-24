@@ -15,54 +15,60 @@ final class bankPresenterActor: bankPresenterProtocol {
     
     var account1 = BankActor(balance: 0)
     
-    func depositAccount1() async {
-        await account1.deposit(amount: 10)
-        let balance = await account1.getBalance()
-        let queue = DispatchQueue.main
-        queue.async  { 
-            self.view?.upDateAccount1(value: "\(balance)")
+    func depositAccount1() {
+        Task {
+            await account1.deposit(amount: 10)
+            let balance = await account1.getBalance()
+            let queue = DispatchQueue.main
+            queue.async  {
+                self.view?.upDateAccount1(value: "\(balance)")
+            }
         }
     }
     
-    func WithdrawAccount1() async {
-        await account1.withdraw(amount: 7)
-        let balance = await account1.getBalance()
-        let queue = DispatchQueue.main
-        queue.async  {
-            self.view?.upDateAccount1(value: "\(balance)")
+    func WithdrawAccount1() {
+        Task {
+            await account1.withdraw(amount: 7)
+            let balance = await account1.getBalance()
+            let queue = DispatchQueue.main
+            queue.async  {
+                self.view?.upDateAccount1(value: "\(balance)")
+            }
         }
     }
     
-    func depositAccount2() async {
+    func depositAccount2() {
         print("depositAccount2")
         view?.upDateAccount2(value: "5")
     }
     
-    func WithdrawAccount2() async {
-        await account1.withdraw(amount: 7)
-        let balance = await account1.getBalance()
-        let queue = DispatchQueue.main
-        queue.async  {
-            self.view?.upDateAccount1(value: "\(balance)")
+    func WithdrawAccount2() {
+        Task {
+            await account1.withdraw(amount: 7)
+            let balance = await account1.getBalance()
+            let queue = DispatchQueue.main
+            queue.async  {
+                self.view?.upDateAccount1(value: "\(balance)")
+            }
         }
     }
     
-    func depositAccount3() async {
+    func depositAccount3() {
         print("depositAccount3")
         view?.upDateAccount3(value: "5")
     }
     
-    func depositAccount4() async {
+    func depositAccount4() {
         print("depositAccount4")
         view?.upDateAccount4(value: "5")
     }
     
-    func WithdrawAccount3() async {
+    func WithdrawAccount3() {
         print("WithdrawAccount3")
         view?.upDateAccount3(value: "3")
     }
     
-    func WithdrawAccount4() async {
+    func WithdrawAccount4() {
         print("WithdrawAccount3")
         view?.upDateAccount4(value: "3")
     }

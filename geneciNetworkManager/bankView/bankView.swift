@@ -242,51 +242,51 @@ final class bankView: UIViewController, bankViewProtocol {
     }
     //MARK: - func ACCOUNT 1
     @objc func depositAccount1() {
-        Task {
-            await presenter?.depositAccount1()
-        }
+        
+             presenter?.depositAccount1()
+        
     }
     
     @objc func WithdrawAccount1() {
-        Task {
-            await presenter?.WithdrawAccount1()
-        }
+        
+             presenter?.WithdrawAccount1()
+        
     }
     //MARK: - func ACCOUNT 2
     @objc func depositAccount2() {
-        Task {
-            await presenter?.depositAccount2()
-        }
+       
+             presenter?.depositAccount2()
+        
     }
     
     @objc func WithdrawAccount2() {
-        Task {
-            await presenter?.WithdrawAccount2()
-        }
+        
+             presenter?.WithdrawAccount2()
+        
     }
     //MARK: - func ACCOUNT 3
     @objc func depositAccount3() {
-        Task {
-            await presenter?.depositAccount3()
-        }
+        
+             presenter?.depositAccount3()
+        
     }
     
     @objc func WithdrawAccount3() {
-        Task {
-            await presenter?.WithdrawAccount3()
-        }
+        
+             presenter?.WithdrawAccount3()
+        
     }
     //MARK: - func ACCOUNT 4
     @objc func depositAccount4() {
-        Task {
-            await presenter?.depositAccount4()
-        }
+        
+             presenter?.depositAccount4()
+        
     }
     
     @objc func WithdrawAccount4() {
-        Task {
-            await presenter?.WithdrawAccount4()
-        }
+        
+             presenter?.WithdrawAccount4()
+        
     }
     //MARK: - Constraints ACCOUNT 1
     func Account1LabelConstraints() {
