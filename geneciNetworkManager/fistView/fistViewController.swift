@@ -22,7 +22,7 @@ class fistViewController: UIViewController, seUpViewProtocol {
     var taskOne: Task<(), Error>? = nil
     var taskTwo: Task<(), Error>? = nil
 
-    lazy var textLable: UILabel = {
+    lazy var textLabel: UILabel = {
         let label = UILabel()
         label.text = "Set value"
         label.backgroundColor = .systemGray6
@@ -30,6 +30,16 @@ class fistViewController: UIViewController, seUpViewProtocol {
         label.clipsToBounds = true
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
+    }()
+    
+    lazy var bankButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("go To bank", for: .normal)
+        button.addTarget(self, action: #selector(gotoBankView), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .systemYellow
+        button.layer.cornerRadius = 25
+        return button
     }()
     
     lazy var mainButton: UIButton = {
@@ -121,7 +131,8 @@ class fistViewController: UIViewController, seUpViewProtocol {
     //MARK: - Hierarchy
     
     func viewComponets() {
-        view.addSubview(textLable)
+        view.addSubview(textLabel)
+        view.addSubview(bankButton)
         view.addSubview(mainButton)
         view.addSubview(textButton)
         view.addSubview(makeCallAsyncAwait)
@@ -134,6 +145,7 @@ class fistViewController: UIViewController, seUpViewProtocol {
     
     func viewConstrains() {
         textLableConstrains()
+        bankButtonConstrains()
         mainButtonConstrains()
         textButtonConstrains()
         makeCallAsyncAwaitConstrains()
@@ -214,7 +226,7 @@ class fistViewController: UIViewController, seUpViewProtocol {
         taskTwo = Task {
             do {
                 let value: dataFomr = try await NetworkManagerAsyncThrows.share.requestMain(endPoint: "https://d2e71.wiremockapi.cloud/json/1", methods: .GET)
-                self.textLable.text = value.fourthValue
+                self.textLabel.text = value.fourthValue
             } catch {
                 print(error)
             }
@@ -222,7 +234,7 @@ class fistViewController: UIViewController, seUpViewProtocol {
     }
     
     @objc func cleantexto() {
-        textLable.text = String()
+        textLabel.text = String()
     }
     
     @objc func goToGDCView() {
@@ -235,16 +247,21 @@ class fistViewController: UIViewController, seUpViewProtocol {
         navigationController?.pushViewController(taskView, animated: true)
     }
     
+    @objc func gotoBankView() {
+        let bankView = bankRouter.getBank()
+        navigationController?.pushViewController(bankView, animated: true)
+    }
+    
     private func settextLableText(_ text: String) {
         let queue = DispatchQueue.main
         queue.async {
-            self.textLable.text = text
+            self.textLabel.text = text
         }
     }
     
     private func settextLableTextActor(_ text: String) async {
         await MainActor.run {
-            self.textLable.text = text
+            self.textLabel.text = text
         }
     }
     
@@ -252,16 +269,23 @@ class fistViewController: UIViewController, seUpViewProtocol {
     
     private func textLableConstrains() {
         NSLayoutConstraint.activate([
-            textLable.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 25),
-            textLable.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
-            textLable.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
-            textLable.heightAnchor.constraint(equalToConstant: 50)
+            textLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            textLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
+            textLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
+            textLabel.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
-    
+    private func bankButtonConstrains() {
+        NSLayoutConstraint.activate([
+            bankButton.topAnchor.constraint(equalTo: textLabel.bottomAnchor, constant: 25),
+            bankButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
+            bankButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
+            bankButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
+    }
     private func mainButtonConstrains() {
         NSLayoutConstraint.activate([
-            mainButton.topAnchor.constraint(equalTo: textLable.bottomAnchor, constant: 25),
+            mainButton.topAnchor.constraint(equalTo: bankButton.bottomAnchor, constant: 25),
             mainButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 25),
             mainButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
             mainButton.heightAnchor.constraint(equalToConstant: 50)
