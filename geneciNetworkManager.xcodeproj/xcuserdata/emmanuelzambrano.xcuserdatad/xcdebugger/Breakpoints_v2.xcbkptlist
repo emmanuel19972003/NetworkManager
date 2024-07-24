@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "284E34EB-C420-4378-8E51-F38B23827801"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "587FA932-0131-432B-B400-E123D3D95DA6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "geneciNetworkManager/bankView/New Group/bankPresenterActor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "depositAccount1()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "587FA932-0131-432B-B400-E123D3D95DA6 - d5d9a8c360666b4c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for geneciNetworkManager.bankPresenterActor.depositAccount1() async -&gt; ()"
+                  moduleName = "geneciNetworkManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/emmanuelzambrano/Desktop/NetworkManager/geneciNetworkManager/bankView/New%20Group/bankPresenterActor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "476">
+               </Location>
+               <Location
+                  uuid = "587FA932-0131-432B-B400-E123D3D95DA6 - 1d8cd06aae0d774e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for geneciNetworkManager.bankPresenterActor.depositAccount1() async -&gt; ()"
+                  moduleName = "geneciNetworkManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/emmanuelzambrano/Desktop/NetworkManager/geneciNetworkManager/bankView/New%20Group/bankPresenterActor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "264">
+               </Location>
+               <Location
+                  uuid = "587FA932-0131-432B-B400-E123D3D95DA6 - 8de607bb52bf6f4a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for geneciNetworkManager.bankPresenterActor.depositAccount1() async -&gt; ()"
+                  moduleName = "geneciNetworkManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/emmanuelzambrano/Desktop/NetworkManager/geneciNetworkManager/bankView/New%20Group/bankPresenterActor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  uuid = "587FA932-0131-432B-B400-E123D3D95DA6 - 69c0fb77798bed4b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) suspend resume partial function for geneciNetworkManager.bankPresenterActor.depositAccount1() async -&gt; ()"
+                  moduleName = "geneciNetworkManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/emmanuelzambrano/Desktop/NetworkManager/geneciNetworkManager/bankView/New%20Group/bankPresenterActor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "587FA932-0131-432B-B400-E123D3D95DA6 - d5d9a8c360666b4c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for geneciNetworkManager.bankPresenterActor.depositAccount1() async -&gt; ()"
+                  moduleName = "geneciNetworkManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/emmanuelzambrano/Desktop/NetworkManager/geneciNetworkManager/bankView/New%20Group/bankPresenterActor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "64">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A9E47E03-DB79-402D-A1F0-35BAC549360C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "geneciNetworkManager/bankView/bankPresenterActor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "depositAccount1()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A9E47E03-DB79-402D-A1F0-35BAC549360C - b9c0ea22106d7126"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for geneciNetworkManager.bankPresenterActor.depositAccount1() async -&gt; ()"
+                  moduleName = "geneciNetworkManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/emmanuelzambrano/Desktop/NetworkManager/geneciNetworkManager/bankView/bankPresenterActor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "472">
+               </Location>
+               <Location
+                  uuid = "A9E47E03-DB79-402D-A1F0-35BAC549360C - f8297f047ce093e3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable () -&gt; () in geneciNetworkManager.bankPresenterActor.depositAccount1() async -&gt; ()"
+                  moduleName = "geneciNetworkManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/emmanuelzambrano/Desktop/NetworkManager/geneciNetworkManager/bankView/bankPresenterActor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

@@ -13,49 +13,56 @@ final class bankPresenterActor: bankPresenterProtocol {
     
     var router: bankRouterProtocol?
     
-    
+    var account1 = BankActor(balance: 0)
     
     func depositAccount1() async {
-        print("depositAccount1")
-        
+        await account1.deposit(amount: 10)
+        let balance = await account1.getBalance()
         let queue = DispatchQueue.main
         queue.async  { 
-            self.view?.upDateAccount1(value: "5")
+            self.view?.upDateAccount1(value: "\(balance)")
         }
-        
     }
     
-    func depositAccount2() {
+    func WithdrawAccount1() async {
+        await account1.withdraw(amount: 7)
+        let balance = await account1.getBalance()
+        let queue = DispatchQueue.main
+        queue.async  {
+            self.view?.upDateAccount1(value: "\(balance)")
+        }
+    }
+    
+    func depositAccount2() async {
         print("depositAccount2")
         view?.upDateAccount2(value: "5")
     }
     
-    func depositAccount3() {
+    func WithdrawAccount2() async {
+        await account1.withdraw(amount: 7)
+        let balance = await account1.getBalance()
+        let queue = DispatchQueue.main
+        queue.async  {
+            self.view?.upDateAccount1(value: "\(balance)")
+        }
+    }
+    
+    func depositAccount3() async {
         print("depositAccount3")
         view?.upDateAccount3(value: "5")
     }
     
-    func depositAccount4() {
+    func depositAccount4() async {
         print("depositAccount4")
         view?.upDateAccount4(value: "5")
     }
     
-    func WithdrawAccount1() {
-        print("WithdrawAccount1")
-        view?.upDateAccount1(value: "3")
-    }
-    
-    func WithdrawAccount2() {
-        print("WithdrawAccount2")
-        view?.upDateAccount2(value: "3")
-    }
-    
-    func WithdrawAccount3() {
+    func WithdrawAccount3() async {
         print("WithdrawAccount3")
         view?.upDateAccount3(value: "3")
     }
     
-    func WithdrawAccount4() {
+    func WithdrawAccount4() async {
         print("WithdrawAccount3")
         view?.upDateAccount4(value: "3")
     }

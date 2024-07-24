@@ -22,6 +22,7 @@
 		67EA30D72B74758D00A887D0 /* NetworkManagerCompletionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EA30D62B74758D00A887D0 /* NetworkManagerCompletionResult.swift */; };
 		67EA30D92B74765500A887D0 /* NetworkManagerAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EA30D82B74765500A887D0 /* NetworkManagerAsync.swift */; };
 		67EA30DB2B7476BC00A887D0 /* NetworkManagerAsyncThrows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EA30DA2B7476BC00A887D0 /* NetworkManagerAsyncThrows.swift */; };
+		9F032C9C2C51917100AED3DB /* BankActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F032C9B2C51917100AED3DB /* BankActor.swift */; };
 		9F03E1532C4FECA800E5DCE5 /* bankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F03E1522C4FECA800E5DCE5 /* bankView.swift */; };
 		9F03E1552C4FECF700E5DCE5 /* bankProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F03E1542C4FECF700E5DCE5 /* bankProtocols.swift */; };
 		9F03E1572C4FEDE200E5DCE5 /* bankPresenterGDC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F03E1562C4FEDE200E5DCE5 /* bankPresenterGDC.swift */; };
@@ -75,6 +76,7 @@
 		67EA30D62B74758D00A887D0 /* NetworkManagerCompletionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerCompletionResult.swift; sourceTree = "<group>"; };
 		67EA30D82B74765500A887D0 /* NetworkManagerAsync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerAsync.swift; sourceTree = "<group>"; };
 		67EA30DA2B7476BC00A887D0 /* NetworkManagerAsyncThrows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerAsyncThrows.swift; sourceTree = "<group>"; };
+		9F032C9B2C51917100AED3DB /* BankActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankActor.swift; sourceTree = "<group>"; };
 		9F03E1522C4FECA800E5DCE5 /* bankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bankView.swift; sourceTree = "<group>"; };
 		9F03E1542C4FECF700E5DCE5 /* bankProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bankProtocols.swift; sourceTree = "<group>"; };
 		9F03E1562C4FEDE200E5DCE5 /* bankPresenterGDC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bankPresenterGDC.swift; sourceTree = "<group>"; };
@@ -191,13 +193,22 @@
 			path = secondView;
 			sourceTree = "<group>";
 		};
+		9F032C9D2C51919700AED3DB /* actor */ = {
+			isa = PBXGroup;
+			children = (
+				9F03E15C2C500E7600E5DCE5 /* bankPresenterActor.swift */,
+				9F032C9B2C51917100AED3DB /* BankActor.swift */,
+			);
+			path = actor;
+			sourceTree = "<group>";
+		};
 		9F03E1512C4FEC5D00E5DCE5 /* bankView */ = {
 			isa = PBXGroup;
 			children = (
 				9F03E1522C4FECA800E5DCE5 /* bankView.swift */,
 				9F03E1542C4FECF700E5DCE5 /* bankProtocols.swift */,
 				9F03E1562C4FEDE200E5DCE5 /* bankPresenterGDC.swift */,
-				9F03E15C2C500E7600E5DCE5 /* bankPresenterActor.swift */,
+				9F032C9D2C51919700AED3DB /* actor */,
 				9F03E15A2C4FEE1800E5DCE5 /* bankRouter.swift */,
 			);
 			path = bankView;
@@ -370,6 +381,7 @@
 				67CA20292AB9FFE200D8ED43 /* GDCViewRouter.swift in Sources */,
 				9F03E15D2C500E7600E5DCE5 /* bankPresenterActor.swift in Sources */,
 				67EA30D72B74758D00A887D0 /* NetworkManagerCompletionResult.swift in Sources */,
+				9F032C9C2C51917100AED3DB /* BankActor.swift in Sources */,
 				673289252AB3520800B61CE6 /* fistViewController.swift in Sources */,
 				67522D2C2AB36F490080BDD9 /* seUpViewProtocol.swift in Sources */,
 				9FF21D2E2C4163E600F29045 /* queues.swift in Sources */,

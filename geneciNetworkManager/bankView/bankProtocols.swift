@@ -26,15 +26,15 @@ protocol bankPresenterProtocol: AnyObject {
     var view: bankViewProtocol? {get set}
     var router: bankRouterProtocol? {get set}
     
-    func depositAccount1()
-    func depositAccount2()
-    func depositAccount3()
-    func depositAccount4()
+    func depositAccount1() async
+    func depositAccount2() async
+    func depositAccount3() async
+    func depositAccount4() async
     
-    func WithdrawAccount1()
-    func WithdrawAccount2()
-    func WithdrawAccount3()
-    func WithdrawAccount4()
+    func WithdrawAccount1() async
+    func WithdrawAccount2() async
+    func WithdrawAccount3() async
+    func WithdrawAccount4() async
 }
 
 protocol bankRouterProtocol: AnyObject {

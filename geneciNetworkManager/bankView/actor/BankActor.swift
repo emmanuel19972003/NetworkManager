@@ -7,7 +7,7 @@
 
 import Foundation
 
-actor BankAccountActor {
+actor BankActor {
     
     init(balance: Int) {
         self.balance = balance
