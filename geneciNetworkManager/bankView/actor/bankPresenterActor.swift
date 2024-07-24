@@ -13,9 +13,16 @@ final class bankPresenterActor: bankPresenterProtocol {
     
     var router: bankRouterProtocol?
     
-    func depositAccount1() {
+    
+    
+    func depositAccount1() async {
         print("depositAccount1")
-        view?.upDateAccount1(value: "5")
+        
+        let queue = DispatchQueue.main
+        queue.async  { 
+            self.view?.upDateAccount1(value: "5")
+        }
+        
     }
     
     func depositAccount2() {
