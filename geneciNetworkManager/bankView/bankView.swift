@@ -10,6 +10,7 @@ import UIKit
 
 final class bankView: UIViewController, bankViewProtocol {
     var presenter: bankPresenterProtocol?
+    var typeOfPresenter: String = ""
     //MARK: - ACCOUNT 1
     lazy var Account1Label: UILabel = {
         let label = UILabel()
@@ -50,6 +51,16 @@ final class bankView: UIViewController, bankViewProtocol {
         button.layer.cornerRadius = 25
         return button
     }()
+    
+    lazy var Account1MultipleAcctionButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Multiple", for: .normal)
+        button.addTarget(self, action: #selector(MultipleAcction1), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .systemRed
+        button.layer.cornerRadius = 25
+        return button
+    }()
     //MARK: - ACCOUNT 2
     lazy var Account2Label: UILabel = {
         let label = UILabel()
@@ -85,6 +96,15 @@ final class bankView: UIViewController, bankViewProtocol {
         let button = UIButton()
         button.setTitle("Withdraw", for: .normal)
         button.addTarget(self, action: #selector(WithdrawAccount2), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .systemRed
+        button.layer.cornerRadius = 25
+        return button
+    }()
+    lazy var Account2MultipleAcctionButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Multiple", for: .normal)
+        button.addTarget(self, action: #selector(MultipleAcction2), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .systemRed
         button.layer.cornerRadius = 25
@@ -180,7 +200,7 @@ final class bankView: UIViewController, bankViewProtocol {
         viewConstraints()
     }
     private func setUpView() {
-        title = "bank view"
+        title = "bank view: \(typeOfPresenter)"
         view.backgroundColor = .white
     }
     private func viewComponents() {
@@ -188,11 +208,13 @@ final class bankView: UIViewController, bankViewProtocol {
         view.addSubview(Account1ValueLabel)
         view.addSubview(Account1DepositButton)
         view.addSubview(Account1WithdrawButton)
+        view.addSubview(Account1MultipleAcctionButton)
         
         view.addSubview(Account2Label)
         view.addSubview(Account2ValueLabel)
         view.addSubview(Account2DepositButton)
         view.addSubview(Account2WithdrawButton)
+        view.addSubview(Account2MultipleAcctionButton)
         
         view.addSubview(Account3Label)
         view.addSubview(Account3ValueLabel)
@@ -211,11 +233,13 @@ final class bankView: UIViewController, bankViewProtocol {
         Account1ValueLabelConstraints()
         Account1DepositButtonConstraints()
         Account1WithdrawButtonConstraints()
+        Account1MultipleAcctionButtonConstraints()
         
         Account2LabelConstraints()
         Account2ValueLabelConstraints()
         Account2DepositButtonConstraints()
         Account2WithdrawButtonConstraints()
+        Account2MultipleAcctionButtonConstraints()
         
         Account3LabelConstraints()
         Account3ValueLabelConstraints()
@@ -243,49 +267,53 @@ final class bankView: UIViewController, bankViewProtocol {
     //MARK: - func ACCOUNT 1
     @objc func depositAccount1() {
         
-             presenter?.depositAccount1()
+        presenter?.depositAccount1()
         
     }
     
     @objc func WithdrawAccount1() {
-        
-             presenter?.WithdrawAccount1()
-        
+        presenter?.WithdrawAccount1()
+    }
+    
+    @objc func MultipleAcction1() {
+        presenter?.MultipleAcction1()
     }
     //MARK: - func ACCOUNT 2
     @objc func depositAccount2() {
-       
-             presenter?.depositAccount2()
-        
+        presenter?.depositAccount2()
     }
     
     @objc func WithdrawAccount2() {
-        
-             presenter?.WithdrawAccount2()
-        
+        presenter?.WithdrawAccount2()
     }
+    
+    @objc func MultipleAcction2() {
+        presenter?.MultipleAcction2()
+    }
+    
+    
     //MARK: - func ACCOUNT 3
     @objc func depositAccount3() {
         
-             presenter?.depositAccount3()
+        presenter?.depositAccount3()
         
     }
     
     @objc func WithdrawAccount3() {
         
-             presenter?.WithdrawAccount3()
+        presenter?.WithdrawAccount3()
         
     }
     //MARK: - func ACCOUNT 4
     @objc func depositAccount4() {
         
-             presenter?.depositAccount4()
+        presenter?.depositAccount4()
         
     }
     
     @objc func WithdrawAccount4() {
         
-             presenter?.WithdrawAccount4()
+        presenter?.WithdrawAccount4()
         
     }
     //MARK: - Constraints ACCOUNT 1
@@ -324,6 +352,15 @@ final class bankView: UIViewController, bankViewProtocol {
             Account1WithdrawButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
+    
+    func Account1MultipleAcctionButtonConstraints() {
+        NSLayoutConstraint.activate([
+            Account1MultipleAcctionButton.topAnchor.constraint(equalTo: Account1WithdrawButton.bottomAnchor, constant: 10),
+            Account1MultipleAcctionButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            Account1MultipleAcctionButton.widthAnchor.constraint(equalToConstant: 150),
+            Account1MultipleAcctionButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
+    }
     //MARK: - Constraints ACCOUNT 2
     func Account2LabelConstraints() {
         NSLayoutConstraint.activate([
@@ -360,10 +397,19 @@ final class bankView: UIViewController, bankViewProtocol {
             Account2WithdrawButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
+    
+    func Account2MultipleAcctionButtonConstraints() {
+        NSLayoutConstraint.activate([
+            Account2MultipleAcctionButton.topAnchor.constraint(equalTo: Account2WithdrawButton.bottomAnchor, constant: 10),
+            Account2MultipleAcctionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            Account2MultipleAcctionButton.widthAnchor.constraint(equalToConstant: 150),
+            Account2MultipleAcctionButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
+    }
     //MARK: - Constraints ACCOUNT 3
     func Account3LabelConstraints() {
         NSLayoutConstraint.activate([
-            Account3Label.topAnchor.constraint(equalTo: Account1WithdrawButton.bottomAnchor, constant: 25),
+            Account3Label.topAnchor.constraint(equalTo: Account1MultipleAcctionButton.bottomAnchor, constant: 25),
             Account3Label.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             Account3Label.widthAnchor.constraint(equalToConstant: 150),
             Account3Label.heightAnchor.constraint(equalToConstant: 50)
@@ -399,7 +445,7 @@ final class bankView: UIViewController, bankViewProtocol {
     //MARK: - Constraints ACCOUNT 4
     func Account4LabelConstraints() {
         NSLayoutConstraint.activate([
-            Account4Label.topAnchor.constraint(equalTo: Account2WithdrawButton.bottomAnchor, constant: 25),
+            Account4Label.topAnchor.constraint(equalTo: Account2MultipleAcctionButton.bottomAnchor, constant: 25),
             Account4Label.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             Account4Label.widthAnchor.constraint(equalToConstant: 150),
             Account4Label.heightAnchor.constraint(equalToConstant: 50)

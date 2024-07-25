@@ -10,6 +10,7 @@ import UIKit
 
 enum typeOfConcurrency{
     case GDC
+    case GDCOnQ
     case actor
     case groupe
 }
@@ -35,6 +36,9 @@ protocol bankPresenterProtocol: AnyObject {
     func WithdrawAccount2()
     func WithdrawAccount3()
     func WithdrawAccount4()
+    
+    func MultipleAcction1()
+    func MultipleAcction2()
 }
 
 protocol bankRouterProtocol: AnyObject {

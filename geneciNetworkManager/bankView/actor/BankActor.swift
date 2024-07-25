@@ -34,3 +34,46 @@ actor BankActor {
         return balance
     }
 }
+
+actor TransactionManager {
+    let account: BankActor
+    
+    init(account: BankActor) {
+        self.account = account
+    }
+    
+    @discardableResult
+    func performWithdrawal(amount: Int) async -> Bool{
+        return await account.withdraw(amount: amount)
+    }
+    
+    func performDeposit(amount: Int) async {
+        await account.deposit(amount: amount)
+    }
+    
+    func getBalance() async -> Int {
+        return await account.getBalance()
+    }
+}
+
+actor Account {
+    var balance: Int = 10// current user balance is 20
+    // ...
+    func withdraw(amount: Int) async {
+        guard balance >= amount else {return}
+        try? await Task.sleep(nanoseconds: 2 * 1_000_000_000) // 2 seconds
+        self.balance = balance - amount
+    }
+}
+
+actor TransactionManagerTest {
+    let account: Account
+    
+    init(account: Account) {
+        self.account = account
+    }
+    
+    func performWithdrawal(amount: Int) async {
+        await account.withdraw(amount: amount)
+    }
+}
