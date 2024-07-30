@@ -14,19 +14,30 @@ final class bankPresenterGDC: bankPresenterProtocol {
     var router: bankRouterProtocol?
     
     let account1 = BankGDC(balance: 0)
+    let account2 = BankGDC(balance: 0)
+    let account3 = BankGDC(balance: 0)
+    let account4 = BankGDC(balance: 0)
     
-    let queue1 = DispatchQueue(label: "account1", attributes: [], autoreleaseFrequency: .never, target: nil)
-    let queue2 = DispatchQueue(label: "account2", qos: .utility, attributes: [], autoreleaseFrequency: .never, target: nil)
+    let queue1 = DispatchQueue(label: "account1", qos: .userInteractive, attributes: [], autoreleaseFrequency: .never, target: nil)
+    let queue2 = DispatchQueue(label: "account2", qos: .userInitiated, attributes: [], autoreleaseFrequency: .never, target: nil)
+    let queue3 = DispatchQueue(label: "account3", qos: .userInteractive, attributes: [], autoreleaseFrequency: .never, target: nil)
+    let queue4 = DispatchQueue(label: "account4 concurrent", qos: .userInteractive, attributes: .concurrent, autoreleaseFrequency: .never, target: nil)
     
     func depositAccount1()  {
-        account1.deposit(amount: 10)
-        let balance = account1.getBalance()
-        view?.upDateAccount1(value: "\(balance)")
+        queue1.async {
+            self.account1.deposit(amount: 10)
+            let balance = self.account1.getBalance()
+            DispatchQueue.main.async {
+                self.view?.upDateAccount1(value: "\(balance)")
+            }
+        }
+        
     }
     
     func WithdrawAccount1() {
         queue1.async {
             self.account1.withdraw(amount: 5)
+            print("thread withDraw: \(Thread.current)")
             DispatchQueue.main.async {
                 let balance = self.account1.getBalance()
                 self.view?.upDateAccount1(value: "\(balance)")
@@ -38,6 +49,7 @@ final class bankPresenterGDC: bankPresenterProtocol {
         queue1.async {
             self.account1.deposit(amount: 10)
             let balance = self.account1.getBalance()
+            print("thread Multiple: \(Thread.current)")
             DispatchQueue.main.async {
                 self.view?.upDateAccount1(value: "\(balance)")
             }
@@ -45,38 +57,86 @@ final class bankPresenterGDC: bankPresenterProtocol {
     }
     
     func depositAccount2() {
-        print("depositAccount2")
-        view?.upDateAccount2(value: "1")
+        queue2.async {
+            self.account2.deposit(amount: 10)
+            let balance = self.account2.getBalance()
+            DispatchQueue.main.async {
+                self.view?.upDateAccount2(value: "\(balance)")
+            }
+        }
     }
     
+    func WithdrawAccount2() {
+        queue2.async {
+            self.account2.withdraw(amount: 5)
+            DispatchQueue.main.async {
+                let balance = self.account2.getBalance()
+                self.view?.upDateAccount2(value: "\(balance)")
+            }
+        }
+    }
     func MultipleAcction2() {
         print("miltiple 1")
         view?.upDateAccount2(value: "15")
     }
     
     func depositAccount3() {
-        print("depositAccount3")
-        view?.upDateAccount3(value: "1")
-    }
-    
-    func depositAccount4() {
-        print("depositAccount4")
-        view?.upDateAccount4(value: "1")
-    }
-    
-    func WithdrawAccount2() {
-        print("WithdrawAccount2")
-        view?.upDateAccount2(value: "0")
+        queue3.async {
+            self.account3.deposit(amount: 10)
+            let balance = self.account3.getBalance()
+            DispatchQueue.main.async {
+                self.view?.upDateAccount3(value: "\(balance)")
+            }
+        }
     }
     
     func WithdrawAccount3() {
-        print("WithdrawAccount3")
-        view?.upDateAccount3(value: "0")
+        queue3.async {
+            self.account3.withdraw(amount: 5)
+            let balance = self.account3.getBalance()
+            self.view?.upDateAccount3(value: "\(balance)")
+        }
+        queue3.async {
+            self.account3.withdraw(amount: 5)
+            let balance = self.account3.getBalance()
+            self.view?.upDateAccount3(value: "\(balance)")
+        }
+    }
+    
+    func depositAccount4() {
+        queue4.async {
+            self.account4.deposit(amount: 10)
+            let balance = self.account4.getBalance()
+            DispatchQueue.main.async {
+                self.view?.upDateAccount4(value: "\(balance)")
+            }
+        }
     }
     
     func WithdrawAccount4() {
-        print("WithdrawAccount3")
-        view?.upDateAccount4(value: "0")
+        var elValor = ""
+        queue4.async {
+            print("en el primer async")
+            self.account4.withdraw(amount: 5)
+            let balance = self.account4.getBalance()
+            self.view?.upDateAccount4(value: "\(balance)")
+            elValor += "termino uno "
+            print(elValor)
+        }
+        queue4.async {
+            print("en el segundo async")
+            self.account4.withdraw(amount: 5)
+            let balance = self.account4.getBalance()
+            self.view?.upDateAccount4(value: "\(balance)")
+            elValor += "termino dos "
+            print(elValor)
+        }
+        queue4.sync {
+            print("el cose es")
+            elValor += "termino todo "
+            Thread.sleep(forTimeInterval: 2)
+            print(elValor)
+        }
     }
     
     

@@ -251,18 +251,30 @@ final class bankView: UIViewController, bankViewProtocol {
         Account4DepositButtonConstraints()
         Account4WithdrawButtonConstraints()
     }
-    
+    @inline(__always)
     func upDateAccount1(value: String) {
-        Account1ValueLabel.text = " Value: \(value)"
+        DispatchQueue.main.async {
+            self.Account1ValueLabel.text = " Value: \(value)"
+        }
+        
     }
+    @inline(__always)
     func upDateAccount2(value: String) {
-        Account2ValueLabel.text = " Value: \(value)"
+        DispatchQueue.main.async {
+            self.Account2ValueLabel.text = " Value: \(value)"
+        }
     }
+    @inline(__always)
     func upDateAccount3(value: String) {
-        Account3ValueLabel.text = " Value: \(value)"
+        DispatchQueue.main.async {
+            self.Account3ValueLabel.text = " Value: \(value)"
+        }
     }
+    @inline(__always)
     func upDateAccount4(value: String) {
-        Account4ValueLabel.text = " Value: \(value)"
+        DispatchQueue.main.async {
+            self.Account4ValueLabel.text = " Value: \(value)"
+        }
     }
     //MARK: - func ACCOUNT 1
     @objc func depositAccount1() {

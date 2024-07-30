@@ -55,10 +55,12 @@ class BankGDC {
     }
     
     func getBalanceOnQueue() -> Int {// ????
-        queue?.sync {
+        guard let queue = queue else {
+            return 0
+        }
+        return queue.sync {
             return balance
         }
-        return 0
     }
     
 }
