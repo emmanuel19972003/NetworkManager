@@ -193,6 +193,21 @@ final class bankView: UIViewController, bankViewProtocol {
         return button
     }()
     
+    //MARK: SEGMENT CONTROLL
+    
+    lazy var segmentControll: UISegmentedControl = {
+        let items = [typeOfConcurrency.GDC.rawValue,
+                     typeOfConcurrency.GDCOnQ.rawValue,
+                     typeOfConcurrency.actor.rawValue,
+                     typeOfConcurrency.groupe.rawValue
+        ]
+        let view = UISegmentedControl(items: items)
+        view.selectedSegmentIndex = 0
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.addTarget(self, action: #selector(filterApply), for: .valueChanged)
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpView()
@@ -226,6 +241,8 @@ final class bankView: UIViewController, bankViewProtocol {
         view.addSubview(Account4DepositButton)
         view.addSubview(Account4WithdrawButton)
         
+        view.addSubview(segmentControll)
+        
     }
     
     private func viewConstraints() {
@@ -250,6 +267,8 @@ final class bankView: UIViewController, bankViewProtocol {
         Account4ValueLabelConstraints()
         Account4DepositButtonConstraints()
         Account4WithdrawButtonConstraints()
+        
+        segmentControllConstraints()
     }
     @inline(__always)
     func upDateAccount1(value: String) {
@@ -276,11 +295,26 @@ final class bankView: UIViewController, bankViewProtocol {
             self.Account4ValueLabel.text = " Value: \(value)"
         }
     }
+    @objc private func filterApply(segment: UISegmentedControl) -> Void {
+        var type: typeOfConcurrency
+        switch segment.selectedSegmentIndex {
+        case 0:
+            type = .GDC
+        case 1:
+            type = .GDCOnQ
+        case 2:
+            type = .actor
+        case 3:
+            type = .groupe
+        default:
+            type = .GDC
+        }
+        title = "bank view: \(typeOfPresenter)"
+        presenter?.setPresenter(view: self, type: type)
+    }
     //MARK: - func ACCOUNT 1
     @objc func depositAccount1() {
-        
         presenter?.depositAccount1()
-        
     }
     
     @objc func WithdrawAccount1() {
@@ -299,8 +333,8 @@ final class bankView: UIViewController, bankViewProtocol {
         presenter?.WithdrawAccount2()
     }
     
-    @objc func MultipleAcction2() {
-        presenter?.MultipleAcction2()
+    @objc func MultipleAcction2() async {
+        await presenter?.MultipleAcction2()
     }
     
     
@@ -488,6 +522,15 @@ final class bankView: UIViewController, bankViewProtocol {
             Account4WithdrawButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             Account4WithdrawButton.widthAnchor.constraint(equalToConstant: 150),
             Account4WithdrawButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
+    }
+    
+    func segmentControllConstraints() {
+        NSLayoutConstraint.activate([
+            segmentControll.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            segmentControll.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            segmentControll.heightAnchor.constraint(equalToConstant: 40),
+            segmentControll.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30),
         ])
     }
 }

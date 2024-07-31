@@ -155,43 +155,28 @@
             filePath = "geneciNetworkManager/bankView/actor/bankPresenterActor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "MultipleAcction2()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "28976B5D-B339-4BA6-9CE8-7219CD20849C - d87112c96564feae"
+                  uuid = "28976B5D-B339-4BA6-9CE8-7219CD20849C - d87112c96564e332"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for closure #2 @Sendable () async -&gt; () in geneciNetworkManager.bankPresenterActor.MultipleAcction2() -&gt; ()"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in geneciNetworkManager.bankPresenterActor.MultipleAcction2() -&gt; ()"
                   moduleName = "geneciNetworkManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/emmanuelzambrano/Desktop/NetworkManager/geneciNetworkManager/bankView/actor/bankPresenterActor.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "105"
-                  endingLineNumber = "105"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
                   offsetFromSymbolStart = "64">
                </Location>
                <Location
-                  uuid = "28976B5D-B339-4BA6-9CE8-7219CD20849C - 78eaf818d6b8aeb3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(2) await resume partial function for closure #2 @Sendable () async -&gt; () in geneciNetworkManager.bankPresenterActor.MultipleAcction2() -&gt; ()"
-                  moduleName = "geneciNetworkManager"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/emmanuelzambrano/Desktop/NetworkManager/geneciNetworkManager/bankView/actor/bankPresenterActor.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "105"
-                  endingLineNumber = "105"
-                  offsetFromSymbolStart = "40">
-               </Location>
-               <Location
-                  uuid = "28976B5D-B339-4BA6-9CE8-7219CD20849C - 78eaf818d6b8aeb3"
+                  uuid = "28976B5D-B339-4BA6-9CE8-7219CD20849C - 78eaf818d6b8b32f"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -201,38 +186,53 @@
                   urlString = "file:///Users/emmanuelzambrano/Desktop/NetworkManager/geneciNetworkManager/bankView/actor/bankPresenterActor.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "105"
-                  endingLineNumber = "105"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "28976B5D-B339-4BA6-9CE8-7219CD20849C - 89c79d66dc26eb3c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in geneciNetworkManager.bankPresenterActor.MultipleAcction2() async -&gt; ()"
+                  moduleName = "geneciNetworkManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/emmanuelzambrano/Desktop/NetworkManager/geneciNetworkManager/bankView/actor/bankPresenterActor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
                   offsetFromSymbolStart = "84">
                </Location>
                <Location
-                  uuid = "28976B5D-B339-4BA6-9CE8-7219CD20849C - 61dfcb87ad8d3aa8"
+                  uuid = "28976B5D-B339-4BA6-9CE8-7219CD20849C - 1d2bcf34c0d40c0f"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in geneciNetworkManager.bankPresenterActor.MultipleAcction2() -&gt; ()"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in geneciNetworkManager.bankPresenterActor.MultipleAcction2() async -&gt; ()"
                   moduleName = "geneciNetworkManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/emmanuelzambrano/Desktop/NetworkManager/geneciNetworkManager/bankView/actor/bankPresenterActor.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "105"
-                  endingLineNumber = "105"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
                   offsetFromSymbolStart = "20">
                </Location>
                <Location
-                  uuid = "28976B5D-B339-4BA6-9CE8-7219CD20849C - de09171b09b958ab"
+                  uuid = "28976B5D-B339-4BA6-9CE8-7219CD20849C - 77702caa5fe0a20e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in geneciNetworkManager.bankPresenterActor.MultipleAcction2() -&gt; ()"
+                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in geneciNetworkManager.bankPresenterActor.MultipleAcction2() async -&gt; ()"
                   moduleName = "geneciNetworkManager"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/emmanuelzambrano/Desktop/NetworkManager/geneciNetworkManager/bankView/actor/bankPresenterActor.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "105"
-                  endingLineNumber = "105"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
                   offsetFromSymbolStart = "124">
                </Location>
             </Locations>
@@ -248,28 +248,13 @@
             filePath = "geneciNetworkManager/bankView/actor/bankPresenterActor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "MultipleAcction2()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "52873B9C-6C40-4419-9FA6-92B6B756B007 - ec1f4f7b203fb9d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "geneciNetworkManager.bankPresenterActor.depositAccount3() -&gt; ()"
-                  moduleName = "geneciNetworkManager"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/emmanuelzambrano/Desktop/NetworkManager/geneciNetworkManager/bankView/actor/bankPresenterActor.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "116"
-                  endingLineNumber = "116"
-                  offsetFromSymbolStart = "224">
-               </Location>
-               <Location
-                  uuid = "52873B9C-6C40-4419-9FA6-92B6B756B007 - 78eaf818d6b8af2e"
+                  uuid = "52873B9C-6C40-4419-9FA6-92B6B756B007 - 78eaf818d6b8b1bb"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -279,12 +264,12 @@
                   urlString = "file:///Users/emmanuelzambrano/Desktop/NetworkManager/geneciNetworkManager/bankView/actor/bankPresenterActor.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "116"
-                  endingLineNumber = "116"
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
                   offsetFromSymbolStart = "84">
                </Location>
                <Location
-                  uuid = "52873B9C-6C40-4419-9FA6-92B6B756B007 - 61dfcb87ad8d3b35"
+                  uuid = "52873B9C-6C40-4419-9FA6-92B6B756B007 - 61dfcb87ad8d25a0"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -294,12 +279,12 @@
                   urlString = "file:///Users/emmanuelzambrano/Desktop/NetworkManager/geneciNetworkManager/bankView/actor/bankPresenterActor.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "116"
-                  endingLineNumber = "116"
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
                   offsetFromSymbolStart = "20">
                </Location>
                <Location
-                  uuid = "52873B9C-6C40-4419-9FA6-92B6B756B007 - de09171b09b95936"
+                  uuid = "52873B9C-6C40-4419-9FA6-92B6B756B007 - de09171b09b947a3"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -309,8 +294,53 @@
                   urlString = "file:///Users/emmanuelzambrano/Desktop/NetworkManager/geneciNetworkManager/bankView/actor/bankPresenterActor.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "116"
-                  endingLineNumber = "116"
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  uuid = "52873B9C-6C40-4419-9FA6-92B6B756B007 - 89c79d66dc26e849"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #2 @Sendable () async -&gt; () in geneciNetworkManager.bankPresenterActor.MultipleAcction2() async -&gt; ()"
+                  moduleName = "geneciNetworkManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/emmanuelzambrano/Desktop/NetworkManager/geneciNetworkManager/bankView/actor/bankPresenterActor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "52873B9C-6C40-4419-9FA6-92B6B756B007 - 1d2bcf34c0d40f7a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #2 @Sendable () async -&gt; () in geneciNetworkManager.bankPresenterActor.MultipleAcction2() async -&gt; ()"
+                  moduleName = "geneciNetworkManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/emmanuelzambrano/Desktop/NetworkManager/geneciNetworkManager/bankView/actor/bankPresenterActor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "52873B9C-6C40-4419-9FA6-92B6B756B007 - 77702caa5fe0a17b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for closure #2 @Sendable () async -&gt; () in geneciNetworkManager.bankPresenterActor.MultipleAcction2() async -&gt; ()"
+                  moduleName = "geneciNetworkManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/emmanuelzambrano/Desktop/NetworkManager/geneciNetworkManager/bankView/actor/bankPresenterActor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
                   offsetFromSymbolStart = "116">
                </Location>
             </Locations>

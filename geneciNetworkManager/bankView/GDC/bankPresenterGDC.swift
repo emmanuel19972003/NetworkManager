@@ -75,7 +75,7 @@ final class bankPresenterGDC: bankPresenterProtocol {
             }
         }
     }
-    func MultipleAcction2() {
+    func MultipleAcction2() async {
         print("miltiple 1")
         view?.upDateAccount2(value: "15")
     }
@@ -92,14 +92,23 @@ final class bankPresenterGDC: bankPresenterProtocol {
     
     func WithdrawAccount3() {
         queue3.async {
+            print("in one")
             self.account3.withdraw(amount: 5)
             let balance = self.account3.getBalance()
             self.view?.upDateAccount3(value: "\(balance)")
+            print("finis one")
         }
         queue3.async {
+            print("in two")
             self.account3.withdraw(amount: 5)
             let balance = self.account3.getBalance()
             self.view?.upDateAccount3(value: "\(balance)")
+            print("finish two")
+        }
+        queue3.async {
+            print("in three")
+            Thread.sleep(forTimeInterval: 2)
+            print("finish three")
         }
     }
     
@@ -139,5 +148,8 @@ final class bankPresenterGDC: bankPresenterProtocol {
         }
     }
     
+    func setPresenter(view: bankView, type: typeOfConcurrency) {
+        router?.setPresenter(view: view, type: type)
+    }
     
 }

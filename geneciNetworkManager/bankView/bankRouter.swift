@@ -16,17 +16,15 @@ final class bankRouter: bankRouterProtocol {
         switch type {
         case .GDC:
             presenter = bankPresenterGDC()
-            view.typeOfPresenter = "GDC"
         case .GDCOnQ:
             presenter = bankPresenterGDConQ()
-            view.typeOfPresenter = "GDC on Q"
         case .actor:
             presenter = bankPresenterActor()
-            view.typeOfPresenter = "Actor"
         case .groupe:
             presenter = bankPresenterGDC()
-            view.typeOfPresenter = "groupe"
         }
+        
+        view.typeOfPresenter = type.rawValue
        
         let router = bankRouter()
         
@@ -36,5 +34,28 @@ final class bankRouter: bankRouterProtocol {
         presenter.router = router
         
         return view
+    }
+    
+    func setPresenter(view: bankView, type: typeOfConcurrency) {
+        
+        var presenter: bankPresenterProtocol
+        
+        switch type {
+        case .GDC:
+            presenter = bankPresenterGDC()
+        case .GDCOnQ:
+            presenter = bankPresenterGDConQ()
+        case .actor:
+            presenter = bankPresenterActor()
+        case .groupe:
+            presenter = bankPresenterGDC()
+        }
+        
+        view.typeOfPresenter = type.rawValue
+        
+        view.presenter = presenter
+        
+        presenter.view = view
+        presenter.router = self
     }
 }

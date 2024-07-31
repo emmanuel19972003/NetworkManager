@@ -73,7 +73,7 @@ final class bankPresenterGDConQ: bankPresenterProtocol {
         }
     }
     
-    func MultipleAcction2() {
+    func MultipleAcction2() async {
         print("miltiple 1")
         view?.upDateAccount2(value: "15")
     }
@@ -96,6 +96,10 @@ final class bankPresenterGDConQ: bankPresenterProtocol {
     func WithdrawAccount4() {
         print("WithdrawAccount3")
         view?.upDateAccount4(value: "0")
+    }
+    
+    func setPresenter(view: bankView, type: typeOfConcurrency) {
+        router?.setPresenter(view: view, type: type)
     }
     
     

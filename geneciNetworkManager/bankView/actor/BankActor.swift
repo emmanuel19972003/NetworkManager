@@ -19,9 +19,10 @@ actor BankActor {
         balance += amount
     }
     @discardableResult
-    func withdraw(amount: Int) async -> Bool {
+    func withdraw(amount: Int) -> Bool {
         if balance >= amount {
-            try? await Task.sleep(nanoseconds: 2 * 1_000_000_000) // 2 seconds
+//            try? await Task.sleep(nanoseconds: 2 * 1_000_000_000) 
+            Thread.sleep(forTimeInterval: 2)
             balance -= amount
             print("withdraw balance 1: \(balance)")
             return true

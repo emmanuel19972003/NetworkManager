@@ -8,11 +8,11 @@
 import Foundation
 import UIKit
 
-enum typeOfConcurrency{
-    case GDC
-    case GDCOnQ
-    case actor
-    case groupe
+enum typeOfConcurrency: String{
+    case GDC = "GDC"
+    case GDCOnQ = "GDCOnQ"
+    case actor = "Actor"
+    case groupe = "Groupe"
 }
 
 protocol bankViewProtocol: UIViewController {
@@ -38,9 +38,12 @@ protocol bankPresenterProtocol: AnyObject {
     func WithdrawAccount4()
     
     func MultipleAcction1()
-    func MultipleAcction2()
+    func MultipleAcction2() async
+    
+    func setPresenter(view: bankView, type: typeOfConcurrency)
 }
 
 protocol bankRouterProtocol: AnyObject {
     static func getBank(type: typeOfConcurrency) -> UIViewController
+    func setPresenter(view: bankView, type: typeOfConcurrency)
 }
