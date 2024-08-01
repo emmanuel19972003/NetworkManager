@@ -309,7 +309,7 @@ final class bankView: UIViewController, bankViewProtocol {
         default:
             type = .GDC
         }
-        title = "bank view: \(typeOfPresenter)"
+        title = "bank view: \(type.rawValue)"
         presenter?.setPresenter(view: self, type: type)
     }
     //MARK: - func ACCOUNT 1

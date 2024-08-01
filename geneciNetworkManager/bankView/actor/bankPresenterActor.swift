@@ -8,7 +8,7 @@
 import Foundation
 
 final class bankPresenterActor: bankPresenterProtocol {
-
+    
     weak var view: bankViewProtocol?
     
     var router: bankRouterProtocol?
@@ -17,7 +17,6 @@ final class bankPresenterActor: bankPresenterProtocol {
     
     var account2 = BankActor(balance: 0)
     
-    var manager1 = TransactionManager(account: BankActor(balance: 10))
     
     
     func depositAccount1() {
@@ -37,25 +36,21 @@ final class bankPresenterActor: bankPresenterProtocol {
     }
     
     func MultipleAcction1() {
-        Task {
-            await manager1.performWithdrawal(amount:10)
-            let balance = await manager1.getBalance()
-            let queue = DispatchQueue.main
-            queue.async  {
-                self.view?.upDateAccount1(value: "\(balance)")
-            }
-            
-        }
+        let accountManager = TransactionManager(account: account1)
         
         Task {
-            await manager1.performWithdrawal(amount:10)
-            let balance = await manager1.getBalance()
-            let queue = DispatchQueue.main
-            queue.async  {
-                self.view?.upDateAccount1(value: "\(balance)")
-            }
-            
+            await accountManager.performWithdrawal(amount: 5)
+            print(Thread.current)
+            let balance = await accountManager.getBalance()
+            self.view?.upDateAccount1(value: "\(balance)")
         }
+        Task {
+            await account1.withdraw(amount: 5)
+            print(Thread.current)
+            let balance = await account1.getBalance()
+            self.view?.upDateAccount1(value: "\(balance)")
+        }
+        
     }
     
     func depositAccount2() {
@@ -75,29 +70,8 @@ final class bankPresenterActor: bankPresenterProtocol {
     }
     
     func MultipleAcction2() async {
-        let account = Account()
-        let manager = TransactionManagerTest(account: account)
         
-        // Perform a withdrawal from TransactionManager Actor
-        Task {
-            // cross-actor reference
-            await manager.performWithdrawal(amount: 10)
-            let balance = await account.balance
-            DispatchQueue.main.async  {
-                self.view?.upDateAccount2(value: "\(balance)")
-            }
-        }
         
-        // Perform a withdrawal from outside any actor
-        Task {
-            // cross-actor reference
-            await account.withdraw(amount: 10)
-            
-            let balance = await account.balance
-            DispatchQueue.main.async  {
-                self.view?.upDateAccount2(value: "\(balance)")
-            }
-        }
     }
     
     func depositAccount3() {

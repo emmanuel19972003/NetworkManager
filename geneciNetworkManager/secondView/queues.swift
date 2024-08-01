@@ -89,7 +89,7 @@ class usoOperationQueue {
     
     func dads() {
         var sets = Set<Int?>()
-        var input: String = "dasd3423gds"
+        let input: String = "dasd3423gds"
         for letter in input {
             let sfas = Int("\(letter)")
             sets.insert(sfas)

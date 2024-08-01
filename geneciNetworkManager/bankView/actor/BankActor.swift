@@ -21,7 +21,7 @@ actor BankActor {
     @discardableResult
     func withdraw(amount: Int) -> Bool {
         if balance >= amount {
-//            try? await Task.sleep(nanoseconds: 2 * 1_000_000_000) 
+            print("hay plata, antes del sleep")
             Thread.sleep(forTimeInterval: 2)
             balance -= amount
             print("withdraw balance 1: \(balance)")
@@ -57,24 +57,3 @@ actor TransactionManager {
     }
 }
 
-actor Account {
-    var balance: Int = 10// current user balance is 20
-    // ...
-    func withdraw(amount: Int) async {
-        guard balance >= amount else {return}
-        try? await Task.sleep(nanoseconds: 2 * 1_000_000_000) // 2 seconds
-        self.balance = balance - amount
-    }
-}
-
-actor TransactionManagerTest {
-    let account: Account
-    
-    init(account: Account) {
-        self.account = account
-    }
-    
-    func performWithdrawal(amount: Int) async {
-        await account.withdraw(amount: amount)
-    }
-}
