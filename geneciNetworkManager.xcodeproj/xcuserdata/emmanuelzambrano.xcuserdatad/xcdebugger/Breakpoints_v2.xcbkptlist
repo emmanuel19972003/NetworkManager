@@ -155,9 +155,9 @@
             filePath = "geneciNetworkManager/bankView/actor/bankPresenterActor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "MultipleAcction2()"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "depositAccount4()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -250,6 +250,21 @@
                   endingLineNumber = "85"
                   offsetFromSymbolStart = "456">
                </Location>
+               <Location
+                  uuid = "28976B5D-B339-4BA6-9CE8-7219CD20849C - aee43cbdfa27ef59"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "geneciNetworkManager.bankPresenterActor.depositAccount4() -&gt; ()"
+                  moduleName = "geneciNetworkManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/emmanuelzambrano/Desktop/NetworkManager/geneciNetworkManager/bankView/actor/bankPresenterActor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "420">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -263,10 +278,10 @@
             filePath = "geneciNetworkManager/bankView/actor/bankPresenterActor.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "MultipleAcction2()"
-            landmarkType = "7">
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "bankPresenterActor"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "52873B9C-6C40-4419-9FA6-92B6B756B007 - 78eaf818d6b8b1bb"
@@ -372,6 +387,21 @@
                   startingLineNumber = "96"
                   endingLineNumber = "96"
                   offsetFromSymbolStart = "224">
+               </Location>
+               <Location
+                  uuid = "52873B9C-6C40-4419-9FA6-92B6B756B007 - 32b9e0e83539627b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "geneciNetworkManager.bankPresenterActor.setPresenter(view: geneciNetworkManager.bankView, type: geneciNetworkManager.typeOfConcurrency) -&gt; ()"
+                  moduleName = "geneciNetworkManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/emmanuelzambrano/Desktop/NetworkManager/geneciNetworkManager/bankView/actor/bankPresenterActor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "60">
                </Location>
             </Locations>
          </BreakpointContent>

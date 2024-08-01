@@ -199,7 +199,8 @@ final class bankView: UIViewController, bankViewProtocol {
         let items = [typeOfConcurrency.GDC.rawValue,
                      typeOfConcurrency.GDCOnQ.rawValue,
                      typeOfConcurrency.actor.rawValue,
-                     typeOfConcurrency.groupe.rawValue
+                     typeOfConcurrency.groupe.rawValue,
+                     typeOfConcurrency.lock.rawValue
         ]
         let view = UISegmentedControl(items: items)
         view.selectedSegmentIndex = 0
@@ -306,6 +307,8 @@ final class bankView: UIViewController, bankViewProtocol {
             type = .actor
         case 3:
             type = .groupe
+        case 4:
+            type = .lock
         default:
             type = .GDC
         }
@@ -333,8 +336,10 @@ final class bankView: UIViewController, bankViewProtocol {
         presenter?.WithdrawAccount2()
     }
     
-    @objc func MultipleAcction2() async {
-        await presenter?.MultipleAcction2()
+    @objc func MultipleAcction2() {
+        Task {
+            await presenter?.MultipleAcction2()
+        }
     }
     
     

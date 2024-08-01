@@ -30,6 +30,8 @@
 		9F03E1572C4FEDE200E5DCE5 /* bankPresenterGDC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F03E1562C4FEDE200E5DCE5 /* bankPresenterGDC.swift */; };
 		9F03E15B2C4FEE1800E5DCE5 /* bankRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F03E15A2C4FEE1800E5DCE5 /* bankRouter.swift */; };
 		9F03E15D2C500E7600E5DCE5 /* bankPresenterActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F03E15C2C500E7600E5DCE5 /* bankPresenterActor.swift */; };
+		9F5430432C5BF99A0041712B /* bankPresenterLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5430422C5BF99A0041712B /* bankPresenterLock.swift */; };
+		9F5430452C5BFBED0041712B /* lockBanck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5430442C5BFBED0041712B /* lockBanck.swift */; };
 		9FF21D2E2C4163E600F29045 /* queues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF21D2D2C4163E600F29045 /* queues.swift */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +88,8 @@
 		9F03E1562C4FEDE200E5DCE5 /* bankPresenterGDC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bankPresenterGDC.swift; sourceTree = "<group>"; };
 		9F03E15A2C4FEE1800E5DCE5 /* bankRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bankRouter.swift; sourceTree = "<group>"; };
 		9F03E15C2C500E7600E5DCE5 /* bankPresenterActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bankPresenterActor.swift; sourceTree = "<group>"; };
+		9F5430422C5BF99A0041712B /* bankPresenterLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bankPresenterLock.swift; sourceTree = "<group>"; };
+		9F5430442C5BFBED0041712B /* lockBanck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lockBanck.swift; sourceTree = "<group>"; };
 		9FF21D2D2C4163E600F29045 /* queues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = queues.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -221,11 +225,21 @@
 			children = (
 				9F03E1522C4FECA800E5DCE5 /* bankView.swift */,
 				9F03E1542C4FECF700E5DCE5 /* bankProtocols.swift */,
+				9F5430412C5BF9850041712B /* locks */,
 				9F032CA02C52B60F00AED3DB /* GDC */,
 				9F032C9D2C51919700AED3DB /* actor */,
 				9F03E15A2C4FEE1800E5DCE5 /* bankRouter.swift */,
 			);
 			path = bankView;
+			sourceTree = "<group>";
+		};
+		9F5430412C5BF9850041712B /* locks */ = {
+			isa = PBXGroup;
+			children = (
+				9F5430422C5BF99A0041712B /* bankPresenterLock.swift */,
+				9F5430442C5BFBED0041712B /* lockBanck.swift */,
+			);
+			path = locks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,7 +324,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					6732890A2AB3514500B61CE6 = {
 						CreatedOnToolsVersion = 14.2;
@@ -388,6 +402,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F5430432C5BF99A0041712B /* bankPresenterLock.swift in Sources */,
 				67522D2E2AB370B90080BDD9 /* NetworManagerModels.swift in Sources */,
 				67EA30D52B74751A00A887D0 /* NetworManagerCompletionHandler.swift in Sources */,
 				67EA30DB2B7476BC00A887D0 /* NetworkManagerAsyncThrows.swift in Sources */,
@@ -405,6 +420,7 @@
 				678BF2472AC63DE9000629D7 /* taskViewController.swift in Sources */,
 				9F03E1532C4FECA800E5DCE5 /* bankView.swift in Sources */,
 				673289112AB3514500B61CE6 /* SceneDelegate.swift in Sources */,
+				9F5430452C5BFBED0041712B /* lockBanck.swift in Sources */,
 				67CA20232AB9FFBD00D8ED43 /* GDCViewViewController.swift in Sources */,
 				9F032CA22C52B64900AED3DB /* bankPresenterGDConQ.swift in Sources */,
 				9F03E1572C4FEDE200E5DCE5 /* bankPresenterGDC.swift in Sources */,
@@ -502,6 +518,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -562,6 +579,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

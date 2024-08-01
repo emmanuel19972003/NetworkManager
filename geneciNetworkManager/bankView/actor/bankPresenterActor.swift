@@ -40,13 +40,11 @@ final class bankPresenterActor: bankPresenterProtocol {
         
         Task {
             await accountManager.performWithdrawal(amount: 5)
-            print(Thread.current)
             let balance = await accountManager.getBalance()
             self.view?.upDateAccount1(value: "\(balance)")
         }
         Task {
             await account1.withdraw(amount: 5)
-            print(Thread.current)
             let balance = await account1.getBalance()
             self.view?.upDateAccount1(value: "\(balance)")
         }

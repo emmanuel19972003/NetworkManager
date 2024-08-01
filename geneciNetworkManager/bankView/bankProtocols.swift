@@ -13,6 +13,7 @@ enum typeOfConcurrency: String{
     case GDCOnQ = "GDCOnQ"
     case actor = "Actor"
     case groupe = "Groupe"
+    case lock = "Lock"
 }
 
 protocol bankViewProtocol: UIViewController {

@@ -22,6 +22,8 @@ final class bankRouter: bankRouterProtocol {
             presenter = bankPresenterActor()
         case .groupe:
             presenter = bankPresenterGDC()
+        case .lock:
+            presenter = bankPresenterLock()
         }
         
         view.typeOfPresenter = type.rawValue
@@ -49,6 +51,8 @@ final class bankRouter: bankRouterProtocol {
             presenter = bankPresenterActor()
         case .groupe:
             presenter = bankPresenterGDC()
+        case .lock:
+            presenter = bankPresenterLock()
         }
         
         view.typeOfPresenter = type.rawValue
