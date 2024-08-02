@@ -14,14 +14,26 @@ class bankPresenterLock: bankPresenterProtocol {
     
     let juego = juegoDelHola()
     
+    let account1 = lockBanck(balance: 0)
+    let account2 = lockBanck(balance: 0)
+    let account3 = lockBanck(balance: 0)
+    let account4 = lockBanck(balance: 0)
+    
     func depositAccount1() {
-        print("deposit 1")
-        view?.upDateAccount1(value: "5")
+        DispatchQueue.global().async {
+            self.account1.deposit(amount: 10)
+            let value = self.account1.getBalance()
+            self.view?.upDateAccount1(value: "\(value)")
+        }
+       
     }
     
     func WithdrawAccount1() {
-        print("Withdraw 1")
-        view?.upDateAccount1(value: "0")
+        DispatchQueue.global().async {
+            self.account1.withdraw(amount: 5)
+            let value = self.account1.getBalance()
+            self.view?.upDateAccount1(value: "\(value)")
+        }
     }
     
     func MultipleAcction1() {
@@ -36,13 +48,19 @@ class bankPresenterLock: bankPresenterProtocol {
     }
     
     func depositAccount2() {
-        print("deposit 2")
-        view?.upDateAccount2(value: "5")
+        DispatchQueue.global().async {
+            self.account2.deposit(amount: 10)
+            let value = self.account2.getBalance()
+            self.view?.upDateAccount2(value: "\(value)")
+        }
     }
     
     func WithdrawAccount2() {
-        print("Withdraw 2")
-        view?.upDateAccount2(value: "0")
+        DispatchQueue.global().async {
+            self.account2.withdraw(amount: 5)
+            let value = self.account2.getBalance()
+            self.view?.upDateAccount2(value: "\(value)")
+        }
     }
     
     func MultipleAcction2() async {
@@ -58,23 +76,35 @@ class bankPresenterLock: bankPresenterProtocol {
     }
     
     func depositAccount3() {
-        print("deposit 3")
-        view?.upDateAccount3(value: "5")
+        DispatchQueue.global().async {
+            self.account3.deposit(amount: 10)
+            let value = self.account3.getBalance()
+            self.view?.upDateAccount3(value: "\(value)")
+        }
     }
     
     func WithdrawAccount3() {
-        print("Withdraw 3")
-        view?.upDateAccount3(value: "0")
+        DispatchQueue.global().async {
+            self.account3.withdraw(amount: 5)
+            let value = self.account3.getBalance()
+            self.view?.upDateAccount3(value: "\(value)")
+        }
     }
     
     func depositAccount4() {
-        print("deposit 4")
-        view?.upDateAccount4(value: "5")
+        DispatchQueue.global().async {
+            self.account4.deposit(amount: 10)
+            let value = self.account4.getBalance()
+            self.view?.upDateAccount4(value: "\(value)")
+        }
     }
     
     func WithdrawAccount4() {
-        print("Withdraw 4")
-        view?.upDateAccount4(value: "0")
+        DispatchQueue.global().async {
+            self.account4.withdraw(amount: 5)
+            let value = self.account4.getBalance()
+            self.view?.upDateAccount4(value: "\(value)")
+        }
     }
     
     func setPresenter(view: bankView, type: typeOfConcurrency) {

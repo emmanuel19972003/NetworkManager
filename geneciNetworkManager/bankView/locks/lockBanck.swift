@@ -10,6 +10,7 @@ import Foundation
 class lockBanck {
     
     var balance: Int
+    let lock = NSLock()
     
     init(balance: Int) {
         self.balance = balance
@@ -20,41 +21,20 @@ class lockBanck {
     }
     @discardableResult
     func withdraw(amount: Int) -> Bool {
+        lock.lock()
         if balance >= amount {
             Thread.sleep(forTimeInterval: 2.0)
             self.balance -= amount
             print("withdraw balance: \(balance)")
+            lock.unlock()
             return true
         } else {
+            lock.unlock()
             return false
         }
     }
     
     func getBalance() -> Int {
         return balance
-    }
-}
-
-actor juegoDelHola {
-    var myString = ""
-    
-    var steps:[String] = []
-    
-    func addLetter(_ letter: Character) {
-        Thread.sleep(forTimeInterval: TimeInterval(Int.random(in: 0...2)))
-        myString += "\(letter)"
-        steps.append(myString)
-    }
-}
-
-class juegoDelHolaClass {
-    var myString = ""
-    
-    var steps:[String] = []
-    
-    func addLetter(_ letter: Character) {
-        Thread.sleep(forTimeInterval: TimeInterval(Int.random(in: 0...2)))
-        myString += "\(letter)"
-        steps.append(myString)
     }
 }

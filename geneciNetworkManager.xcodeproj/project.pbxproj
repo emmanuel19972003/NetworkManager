@@ -32,6 +32,7 @@
 		9F03E15D2C500E7600E5DCE5 /* bankPresenterActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F03E15C2C500E7600E5DCE5 /* bankPresenterActor.swift */; };
 		9F5430432C5BF99A0041712B /* bankPresenterLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5430422C5BF99A0041712B /* bankPresenterLock.swift */; };
 		9F5430452C5BFBED0041712B /* lockBanck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5430442C5BFBED0041712B /* lockBanck.swift */; };
+		9F5430492C5D3F3E0041712B /* juegoDelHola.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5430482C5D3F3E0041712B /* juegoDelHola.swift */; };
 		9FF21D2E2C4163E600F29045 /* queues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FF21D2D2C4163E600F29045 /* queues.swift */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +91,7 @@
 		9F03E15C2C500E7600E5DCE5 /* bankPresenterActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bankPresenterActor.swift; sourceTree = "<group>"; };
 		9F5430422C5BF99A0041712B /* bankPresenterLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bankPresenterLock.swift; sourceTree = "<group>"; };
 		9F5430442C5BFBED0041712B /* lockBanck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lockBanck.swift; sourceTree = "<group>"; };
+		9F5430482C5D3F3E0041712B /* juegoDelHola.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = juegoDelHola.swift; sourceTree = "<group>"; };
 		9FF21D2D2C4163E600F29045 /* queues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = queues.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -225,6 +227,7 @@
 			children = (
 				9F03E1522C4FECA800E5DCE5 /* bankView.swift */,
 				9F03E1542C4FECF700E5DCE5 /* bankProtocols.swift */,
+				9F5430482C5D3F3E0041712B /* juegoDelHola.swift */,
 				9F5430412C5BF9850041712B /* locks */,
 				9F032CA02C52B60F00AED3DB /* GDC */,
 				9F032C9D2C51919700AED3DB /* actor */,
@@ -402,6 +405,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F5430492C5D3F3E0041712B /* juegoDelHola.swift in Sources */,
 				9F5430432C5BF99A0041712B /* bankPresenterLock.swift in Sources */,
 				67522D2E2AB370B90080BDD9 /* NetworManagerModels.swift in Sources */,
 				67EA30D52B74751A00A887D0 /* NetworManagerCompletionHandler.swift in Sources */,
