@@ -248,7 +248,8 @@ class fistViewController: UIViewController, seUpViewProtocol {
     }
     
     @objc func gotoBankView() {
-        let bankView = bankRouter.getBank()
+//        let bankView = bankRouter.getBank()
+        let bankView = threadViews()
         navigationController?.pushViewController(bankView, animated: true)
     }
     
