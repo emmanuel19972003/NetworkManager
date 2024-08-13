@@ -94,125 +94,131 @@ class GDCViewViewController: UIViewController, GDCViewViewControllerProtocol {
         imageThreeViewConstrains()
     }
     
+    func setImageOneView(image: UIImage) {
+        DispatchQueue.main.async {
+            self.imageOneView.image = image
+        }
+    }
+    
+    func setImageTwoView(image: UIImage) {
+        DispatchQueue.main.async {
+            self.imageTwoView.image = image
+        }
+    }
+    
+    func setImageThreeView(image: UIImage) {
+        DispatchQueue.main.async {
+            self.imageThreeView.image = image
+        }
+    }
+    
     @objc func serialFucn() {
-        let queueOne = DispatchQueue(label: "com.multithreading.concurr", qos: .utility)
-        //        let queueOne = DispatchQueue.global(qos: .background)
-        var bool1 = false
-        var bool2 = false
-        var bool3 = false
-        queueOne.async {
-            Task(priority: .background) {
-//                try? await Task.sleep(for: 5.0)
-                let image: UIImage = try await NetworkManagerAsyncThrows.share.request(endPoint: "https://picsum.photos/200")
-                self.imageOneView.image = image
-                bool1 = true
+        print("serialFucn")
+        DispatchQueue.global().async {
+            print("tara 1")
+            Thread.sleep(forTimeInterval: 1)
+            NetworManagerCompletionHandler.share.request(endPoint: self.endPoint) { image in
+                guard let image = image else {
+                    return
+                }
+                self.setImageOneView(image: image)
+                print("fin tara 1")
+            }
+            Thread.sleep(forTimeInterval: 1)
+            print("tara 2")
+            NetworManagerCompletionHandler.share.request(endPoint: self.endPoint) { image in
+                guard let image = image else {
+                    return
+                }
+                self.setImageTwoView(image: image)
+                print("fin tara 2")
+            }
+            Thread.sleep(forTimeInterval: 1)
+            print(" tara 3")
+            NetworManagerCompletionHandler.share.request(endPoint: self.endPoint) { image in
+                guard let image = image else {
+                    return
+                }
+                self.setImageThreeView(image: image)
+                print("fin tara 3")
             }
         }
-        
-        queueOne.async {
-            print("print 1")
-            print("State of task 1: \(bool1)")
-            print("State of task 2: \(bool2)")
-            print("State of task 3: \(bool3)")
-        }
-        
-        queueOne.async {
-            Task(priority: .high) {
-                let image: UIImage = try await NetworkManagerAsyncThrows.share.request(endPoint: "https://picsum.photos/200")
-                self.imageTwoView.image = image
-                bool2 = true
-            }
-        }
-        
-        queueOne.async {
-            print("print 2")
-            print("State of task 1: \(bool1)")
-            print("State of task 2: \(bool2)")
-            print("State of task 3: \(bool3)")
-        }
-        
-        queueOne.async {
-            Task(priority: .low) {
-                let image: UIImage = try await NetworkManagerAsyncThrows.share.request(endPoint: "https://picsum.photos/200")
-                self.imageThreeView.image = image
-                bool3 = true
-            }
-        }
-        queueOne.async {
-            print("print 1")
-            print("State of task 1: \(bool1)")
-            print("State of task 2: \(bool2)")
-            print("State of task 3: \(bool3)")
-        }
-        
     }
     
     @objc func concurrentFucn() {
-        let anotherQueue = DispatchQueue(label: "otroHilo", qos: .background, attributes: .concurrent)
-        //        let queueOne = DispatchQueue(label: "com.multithreading.concurr", qos: .utility)
-        //        let anotherQueue = DispatchQueue.global(qos: .background)
-        
-        var bool1 = false
-        var bool2 = false
-        var bool3 = false
-        anotherQueue.async {
-            for i in 0..<30{
-                print("🏓",i)
+        let concurrentQueue = DispatchQueue(label: "swiftlee.concurrent.queue", attributes: .concurrent)
+        print("Concurrente")
+        concurrentQueue.async {
+            print(" tara 1")
+            Thread.sleep(forTimeInterval: 1)
+            NetworManagerCompletionHandler.share.request(endPoint: self.endPoint) { image in
+                guard let image = image else {
+                    return
+                }
+                self.setImageOneView(image: image)
+                print("fin tara 1")
             }
-            print("Done 1")
-            bool1 = true
-        }
-        
-        anotherQueue.async {
-            print("print one")
-            print("State of task 1: \(bool1)")
-            print("State of task 2: \(bool2)")
-            print("State of task 3: \(bool3)")
-        }
-        
-        anotherQueue.async {
-            for i in 30..<60{
-                print("⚽️",i)
+            print(" tara 2")
+            Thread.sleep(forTimeInterval: 1)
+            NetworManagerCompletionHandler.share.request(endPoint: self.endPoint) { image in
+                guard let image = image else {
+                    return
+                }
+                self.setImageTwoView(image: image)
+                print("fin tara 2")
             }
-            print("Done 2")
-            bool2 = true
-        }
-        
-        anotherQueue.async {
-            print("print two")
-            print("State of task 1: \(bool1)")
-            print("State of task 2: \(bool2)")
-            print("State of task 3: \(bool3)")
-        }
-        
-        anotherQueue.async {
-            for i in 60..<90{
-                print("🦁",i)
+            print(" tara 3")
+            Thread.sleep(forTimeInterval: 1)
+            NetworManagerCompletionHandler.share.request(endPoint: self.endPoint) { image in
+                guard let image = image else {
+                    return
+                }
+                self.setImageThreeView(image: image)
+                print("fin tara 3")
             }
-            print("Done 3")
-            bool3 = true
         }
-        
-        anotherQueue.async {
-            print("print three")
-            print("State of task 1: \(bool1)")
-            print("State of task 2: \(bool2)")
-            print("State of task 3: \(bool3)")
-        }
-        
     }
     
     @objc func dispatchGroup() {
         let group = DispatchGroup()
-        let queue = DispatchQueue(
-            label: "com.theswiftdev.queues.serial"
-        )
-        
-        queue.async(group: group) {
-            print("group start")
-            sleep(2)
-            print("group end")
+        var image1 = UIImage()
+        var image2 = UIImage()
+        var image3 = UIImage()
+        DispatchQueue.global().async {
+            group.enter()
+            NetworManagerCompletionHandler.share.request(endPoint: self.endPoint) { image in
+                guard let image = image else {
+                    return
+                }
+                image1 = image
+                group.leave()
+            }
+            
+            group.enter()
+            NetworManagerCompletionHandler.share.request(endPoint: self.endPoint) { image in
+                guard let image = image else {
+                    return
+                }
+                image2 = image
+                group.leave()
+            }
+            
+            group.enter()
+            NetworManagerCompletionHandler.share.request(endPoint: self.endPoint) { image in
+                guard let image = image else {
+                    return
+                }
+                image3 = image
+                group.leave()
+            }
+            
+            group.wait()
+            self.setImageOneView(image: image1)
+            self.setImageTwoView(image: image2)
+            self.setImageThreeView(image: image3)
+            
         }
+        
     }
     
     func buttonOneConstrains() {

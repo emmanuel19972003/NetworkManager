@@ -5,7 +5,7 @@
 //  Created by Emmanuel Zambrano Quitian on 2/7/24.
 //
 
-import Foundation
+import UIKit
 
 
 class NetworManagerCompletionHandler {
@@ -69,6 +69,44 @@ class NetworManagerCompletionHandler {
         else {
             completion(.failure(error: error))
         }
+    }
+    
+    func request(endPoint: String,
+                              methods: httpMethods = .GET,
+                              completion: @escaping (UIImage?) -> ()) {
+        
+        guard let url = URL(string: endPoint) else {
+            return completion(nil)
+        }
+        request(url: url, methods: methods, completion: completion)
+    }
+    
+    private func request(url: URL,
+                                      methods: httpMethods,
+                                      completion: @escaping (UIImage?) -> ()) {
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = methods.rawValue
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            
+            if let error = error {
+                completion(nil)
+            }
+            guard let data = data else {
+                completion(nil)
+                return
+            }
+            self.imageDecoder(data: data, completion: completion)
+            
+        }.resume()
+    }
+    
+    private func imageDecoder(data: Data,  completion: @escaping (UIImage?) -> ()) {
+        
+        guard let image = UIImage(data: data) else {
+            return completion(nil)
+        }
+        completion(image)
     }
     
 }
