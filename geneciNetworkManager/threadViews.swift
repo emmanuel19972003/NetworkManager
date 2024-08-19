@@ -13,7 +13,7 @@ class threadViews: UIViewController {
         view.backgroundColor = .white
         bankButton()
         SortingButton()
-        
+        primesButton()
     }
     
     func bankButton() {
@@ -26,11 +26,20 @@ class threadViews: UIViewController {
     }
     
     func SortingButton() {
-        let Bank = UIButton(frame: CGRect(x: 10, y: 200, width: 200, height: 40))
+        let Bank = UIButton(frame: CGRect(x: 10, y: 150, width: 200, height: 40))
         Bank.backgroundColor = .systemBlue
         Bank.layer.cornerRadius = 5
         Bank.setTitle("Sorting", for: .normal)
         Bank.addTarget(self, action: #selector(goToSortView), for: .touchUpInside)
+        view.addSubview(Bank)
+    }
+    
+    func primesButton() {
+        let Bank = UIButton(frame: CGRect(x: 10, y: 200, width: 200, height: 40))
+        Bank.backgroundColor = .systemBlue
+        Bank.layer.cornerRadius = 5
+        Bank.setTitle("primes", for: .normal)
+        Bank.addTarget(self, action: #selector(goToPrimesView), for: .touchUpInside)
         view.addSubview(Bank)
     }
     
@@ -43,6 +52,11 @@ class threadViews: UIViewController {
     @objc
     func goToSortView() {
         let sortingView = sortingView()
+        navigationController?.pushViewController(sortingView, animated: true)
+    }
+    @objc
+    func goToPrimesView() {
+        let sortingView = primeViewController()
         navigationController?.pushViewController(sortingView, animated: true)
     }
 }

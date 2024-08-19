@@ -21,6 +21,8 @@
 		678BF2492AC63E3F000629D7 /* taskRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678BF2482AC63E3F000629D7 /* taskRouter.swift */; };
 		67CA20232AB9FFBD00D8ED43 /* GDCViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CA20222AB9FFBD00D8ED43 /* GDCViewViewController.swift */; };
 		67CA20292AB9FFE200D8ED43 /* GDCViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CA20282AB9FFE200D8ED43 /* GDCViewRouter.swift */; };
+		67E24EA02C70355E00EDBCD6 /* primeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E24E9F2C70355E00EDBCD6 /* primeViewController.swift */; };
+		67E24EA22C70363200EDBCD6 /* primeProblem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E24EA12C70363200EDBCD6 /* primeProblem.swift */; };
 		67EA30D52B74751A00A887D0 /* NetworManagerCompletionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EA30D42B74751A00A887D0 /* NetworManagerCompletionHandler.swift */; };
 		67EA30D72B74758D00A887D0 /* NetworkManagerCompletionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EA30D62B74758D00A887D0 /* NetworkManagerCompletionResult.swift */; };
 		67EA30D92B74765500A887D0 /* NetworkManagerAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67EA30D82B74765500A887D0 /* NetworkManagerAsync.swift */; };
@@ -83,6 +85,8 @@
 		67CA20172AB91A8F00D8ED43 /* clasOnesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = clasOnesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		67CA20222AB9FFBD00D8ED43 /* GDCViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDCViewViewController.swift; sourceTree = "<group>"; };
 		67CA20282AB9FFE200D8ED43 /* GDCViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDCViewRouter.swift; sourceTree = "<group>"; };
+		67E24E9F2C70355E00EDBCD6 /* primeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = primeViewController.swift; sourceTree = "<group>"; };
+		67E24EA12C70363200EDBCD6 /* primeProblem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = primeProblem.swift; sourceTree = "<group>"; };
 		67EA30D42B74751A00A887D0 /* NetworManagerCompletionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworManagerCompletionHandler.swift; sourceTree = "<group>"; };
 		67EA30D62B74758D00A887D0 /* NetworkManagerCompletionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerCompletionResult.swift; sourceTree = "<group>"; };
 		67EA30D82B74765500A887D0 /* NetworkManagerAsync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerAsync.swift; sourceTree = "<group>"; };
@@ -171,7 +175,6 @@
 				678BF2432AC63DC1000629D7 /* viewTask */,
 				671E1FDA2C618612008FB657 /* threadViews.swift */,
 				9F03E1512C4FEC5D00E5DCE5 /* bankView */,
-				671E1FDC2C618801008FB657 /* Sorting */,
 				67CA20212AB9FFA300D8ED43 /* GDCImage */,
 				67522D2F2AB370C70080BDD9 /* NetworManager */,
 				673289172AB3514600B61CE6 /* Assets.xcassets */,
@@ -220,6 +223,24 @@
 			path = GDCImage;
 			sourceTree = "<group>";
 		};
+		67E24E9B2C7033F200EDBCD6 /* concurrent Problems */ = {
+			isa = PBXGroup;
+			children = (
+				67E24E9C2C70340600EDBCD6 /* prime Detector */,
+				671E1FDC2C618801008FB657 /* Sorting */,
+			);
+			path = "concurrent Problems";
+			sourceTree = "<group>";
+		};
+		67E24E9C2C70340600EDBCD6 /* prime Detector */ = {
+			isa = PBXGroup;
+			children = (
+				67E24E9F2C70355E00EDBCD6 /* primeViewController.swift */,
+				67E24EA12C70363200EDBCD6 /* primeProblem.swift */,
+			);
+			path = "prime Detector";
+			sourceTree = "<group>";
+		};
 		9F032C9D2C51919700AED3DB /* actor */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +270,7 @@
 				9F032CA02C52B60F00AED3DB /* GDC */,
 				9F032C9D2C51919700AED3DB /* actor */,
 				9F03E15A2C4FEE1800E5DCE5 /* bankRouter.swift */,
+				67E24E9B2C7033F200EDBCD6 /* concurrent Problems */,
 			);
 			path = bankView;
 			sourceTree = "<group>";
@@ -426,6 +448,7 @@
 				9F5430432C5BF99A0041712B /* bankPresenterLock.swift in Sources */,
 				67522D2E2AB370B90080BDD9 /* NetworManagerModels.swift in Sources */,
 				671E1FDB2C618612008FB657 /* threadViews.swift in Sources */,
+				67E24EA02C70355E00EDBCD6 /* primeViewController.swift in Sources */,
 				67EA30D52B74751A00A887D0 /* NetworManagerCompletionHandler.swift in Sources */,
 				67EA30DB2B7476BC00A887D0 /* NetworkManagerAsyncThrows.swift in Sources */,
 				9F03E15B2C4FEE1800E5DCE5 /* bankRouter.swift in Sources */,
@@ -440,6 +463,7 @@
 				9FF21D2E2C4163E600F29045 /* queues.swift in Sources */,
 				6732890F2AB3514500B61CE6 /* AppDelegate.swift in Sources */,
 				67EA30D92B74765500A887D0 /* NetworkManagerAsync.swift in Sources */,
+				67E24EA22C70363200EDBCD6 /* primeProblem.swift in Sources */,
 				678BF2472AC63DE9000629D7 /* taskViewController.swift in Sources */,
 				9F03E1532C4FECA800E5DCE5 /* bankView.swift in Sources */,
 				673289112AB3514500B61CE6 /* SceneDelegate.swift in Sources */,

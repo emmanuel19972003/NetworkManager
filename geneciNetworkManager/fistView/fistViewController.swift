@@ -34,8 +34,8 @@ class fistViewController: UIViewController, seUpViewProtocol {
     
     lazy var bankButton: UIButton = {
         let button = UIButton()
-        button.setTitle("go To bank", for: .normal)
-        button.addTarget(self, action: #selector(gotoBankView), for: .touchUpInside)
+        button.setTitle("go concurrency ", for: .normal)
+        button.addTarget(self, action: #selector(gotoConcurrencyView), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .systemYellow
         button.layer.cornerRadius = 25
@@ -247,10 +247,9 @@ class fistViewController: UIViewController, seUpViewProtocol {
         navigationController?.pushViewController(taskView, animated: true)
     }
     
-    @objc func gotoBankView() {
-//        let bankView = bankRouter.getBank()
-        let bankView = threadViews()
-        navigationController?.pushViewController(bankView, animated: true)
+    @objc func gotoConcurrencyView() {
+        let threadViews = threadViews()
+        navigationController?.pushViewController(threadViews, animated: true)
     }
     
     private func settextLableText(_ text: String) {
