@@ -40,8 +40,8 @@ class primeViewController: UIViewController {
     func checkForPrime() {
         DispatchQueue.global().async {
             let claculadora = primeProblem(listOfNumbers: [953,6,10,6,8,6,5])
-            claculadora.checkForPrims()
-
+            let result = claculadora.checkForPrims()
+            print(result)
         }
     }
     

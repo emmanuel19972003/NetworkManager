@@ -15,7 +15,7 @@ class primeProblem {
         self.listOfNumbers = listOfNumbers
     }
     
-    func checkForPrims() {
+    func checkForPrims() -> [Bool]{
         let group = DispatchGroup()
         var finalsList: [Bool?] = Array(repeating: nil, count: listOfNumbers.count)
         while self.current < self.listOfNumbers.count {
@@ -34,7 +34,7 @@ class primeProblem {
             }
         }
         group.wait()
-        print(finalsList)
+        return finalsList as! [Bool]
     }
     
     func getItem() -> Int {
