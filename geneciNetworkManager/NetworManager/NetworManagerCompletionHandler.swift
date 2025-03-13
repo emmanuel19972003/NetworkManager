@@ -71,9 +71,10 @@ class NetworManagerCompletionHandler {
         }
     }
     
+    //MARK: - image
     func request(endPoint: String,
-                              methods: httpMethods = .GET,
-                              completion: @escaping (UIImage?) -> ()) {
+                 methods: httpMethods = .GET,
+                 completion: @escaping (UIImage?) -> ()) {
         
         guard let url = URL(string: endPoint) else {
             return completion(nil)
@@ -82,8 +83,8 @@ class NetworManagerCompletionHandler {
     }
     
     private func request(url: URL,
-                                      methods: httpMethods,
-                                      completion: @escaping (UIImage?) -> ()) {
+                         methods: httpMethods,
+                         completion: @escaping (UIImage?) -> ()) {
         
         var request = URLRequest(url: url)
         request.httpMethod = methods.rawValue
@@ -107,6 +108,58 @@ class NetworManagerCompletionHandler {
             return completion(nil)
         }
         completion(image)
+    }
+    
+    //MARK: - add body
+    
+    func requestrequest<T: Decodable, U: Encodable>(endPoint: String,
+                                                    methods: httpMethods,
+                                                    body: U? = nil,
+                                                    completion: @escaping (networkResponse<T>) -> ()) {
+        
+        guard let url = URL(string: endPoint) else {
+            completion(.failure(error: URLError(.badURL)))
+            return
+        }
+        
+        if let body = body {
+            request(url: url, methods: methods, body: body, completion: completion)
+        } else {
+            request(url: url, methods: methods, completion: completion)
+        }
+        
+    }
+    
+    private func request<T: Decodable, U: Encodable>(
+        url: URL,
+        methods: httpMethods,
+        body: U,
+        completion: @escaping (networkResponse<T>) -> ()
+    ) {
+        var request = URLRequest(url: url)
+        request.httpMethod = methods.rawValue
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        do {
+            request.httpBody = try JSONEncoder().encode(body)
+        } catch {
+            let encodingError = NSError(domain: "Encoding Error", code: 1001, userInfo: nil)
+            completion(.failure(error: encodingError))
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                self.setErrorResponce(error: error, completion: completion)
+                return
+            }
+            guard let data = data else {
+                let dataError = NSError(domain: "Casting Error", code: 1000, userInfo: nil)
+                completion(.failure(error: dataError))
+                return
+            }
+            self.jsonDecode(data: data, completion: completion)
+        }.resume()
     }
     
 }
